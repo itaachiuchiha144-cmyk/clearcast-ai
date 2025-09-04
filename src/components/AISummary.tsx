@@ -122,30 +122,30 @@ export function AISummary({ weather }: AISummaryProps) {
     <Card className="glass-card p-6 shadow-weather h-fit">
       <div className="flex items-center gap-2 mb-4">
         <Brain className="h-5 w-5 text-primary-glow" />
-        <h3 className="text-lg font-semibold text-white">AI Weather Insights</h3>
+        <h3 className="text-lg font-semibold text-foreground">AI Weather Insights</h3>
       </div>
 
       {isLoading ? (
         <div className="space-y-4">
           <div className="animate-pulse">
-            <div className="h-4 bg-white/10 rounded mb-2"></div>
-            <div className="h-4 bg-white/10 rounded mb-2 w-4/5"></div>
-            <div className="h-4 bg-white/10 rounded w-3/5"></div>
+            <div className="h-4 bg-muted/50 rounded mb-2"></div>
+            <div className="h-4 bg-muted/50 rounded mb-2 w-4/5"></div>
+            <div className="h-4 bg-muted/50 rounded w-3/5"></div>
           </div>
           <div className="space-y-2">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="h-8 bg-white/10 rounded animate-pulse"></div>
+              <div key={i} className="h-8 bg-muted/50 rounded animate-pulse"></div>
             ))}
           </div>
         </div>
       ) : (
         <div className="space-y-4">
-          <div className="text-white/90 text-sm leading-relaxed">
+          <div className="text-foreground text-sm leading-relaxed">
             {summary}
           </div>
 
           <div className="space-y-2">
-            <h4 className="text-sm font-medium text-white/80 flex items-center gap-1">
+            <h4 className="text-sm font-medium text-foreground flex items-center gap-1">
               <Sparkles className="h-4 w-4" />
               Smart Recommendations
             </h4>
@@ -153,7 +153,7 @@ export function AISummary({ weather }: AISummaryProps) {
               <Badge
                 key={index}
                 variant="secondary"
-                className="bg-white/10 text-white border-white/20 text-xs flex items-center gap-1 w-full justify-start p-2"
+                className="bg-muted/20 text-foreground border-border text-xs flex items-center gap-1 w-full justify-start p-2"
               >
                 {getRecommendationIcon(rec)}
                 {rec}

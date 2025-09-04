@@ -139,7 +139,7 @@ export function WeatherDashboard() {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-2 text-white">
+          <div className="flex items-center gap-2 text-foreground">
             <MapPin className="h-5 w-5" />
             <span className="text-lg font-medium">{location?.name}</span>
           </div>
@@ -147,7 +147,7 @@ export function WeatherDashboard() {
             variant="secondary"
             size="sm"
             onClick={() => setShowSearch(true)}
-            className="glass-card text-white border-white/20 hover:bg-white/10"
+            className="glass-card text-foreground border-border hover:bg-muted/20"
           >
             <Search className="h-4 w-4 mr-2" />
             Change Location
@@ -177,7 +177,7 @@ export function WeatherDashboard() {
 
         {/* Forecast Section */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-white mb-6">7-Day Forecast</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">7-Day Forecast</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-4">
             {currentWeather.forecast.map((day, index) => (
               <ForecastCard key={index} forecast={day} />
@@ -189,29 +189,29 @@ export function WeatherDashboard() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card className="glass-card p-4 shadow-card">
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">{currentWeather.current.humidity}%</div>
-              <div className="text-sm text-white/70">Humidity</div>
+              <div className="text-2xl font-bold text-foreground">{currentWeather.current.humidity}%</div>
+              <div className="text-sm text-muted-foreground">Humidity</div>
             </div>
           </Card>
           
           <Card className="glass-card p-4 shadow-card">
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">{currentWeather.current.windSpeed} km/h</div>
-              <div className="text-sm text-white/70">Wind Speed</div>
+              <div className="text-2xl font-bold text-foreground">{currentWeather.current.windSpeed} km/h</div>
+              <div className="text-sm text-muted-foreground">Wind Speed</div>
             </div>
           </Card>
           
           <Card className="glass-card p-4 shadow-card">
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">{currentWeather.current.pressure} hPa</div>
-              <div className="text-sm text-white/70">Pressure</div>
+              <div className="text-2xl font-bold text-foreground">{currentWeather.current.pressure} hPa</div>
+              <div className="text-sm text-muted-foreground">Pressure</div>
             </div>
           </Card>
           
           <Card className="glass-card p-4 shadow-card">
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">{currentWeather.current.visibility} km</div>
-              <div className="text-sm text-white/70">Visibility</div>
+              <div className="text-2xl font-bold text-foreground">{currentWeather.current.visibility} km</div>
+              <div className="text-sm text-muted-foreground">Visibility</div>
             </div>
           </Card>
         </div>

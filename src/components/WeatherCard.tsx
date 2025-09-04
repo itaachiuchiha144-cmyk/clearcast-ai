@@ -38,22 +38,22 @@ export function WeatherCard({ weather }: WeatherCardProps) {
       <div className="flex items-start justify-between mb-6">
         <div>
           <div className="flex items-baseline gap-2 mb-2">
-            <span className="text-6xl font-light text-white">
+            <span className="text-6xl font-light text-foreground">
               {Math.round(weather.current.temperature)}
             </span>
-            <span className="text-2xl text-white/70">°C</span>
+            <span className="text-2xl text-muted-foreground">°C</span>
           </div>
-          <div className="text-lg text-white/80 mb-1 capitalize">
+          <div className="text-lg text-foreground mb-1 capitalize">
             {weather.current.description}
           </div>
-          <div className="text-sm text-white/60">
+          <div className="text-sm text-muted-foreground">
             Feels like {Math.round(weather.current.feelsLike)}°C
           </div>
         </div>
         
         <div className="flex flex-col items-center">
           {getWeatherIcon(weather.current.condition)}
-          <div className="text-sm text-white/60 mt-2 text-center">
+          <div className="text-sm text-muted-foreground mt-2 text-center">
             {weather.location.name}
           </div>
         </div>
@@ -61,22 +61,22 @@ export function WeatherCard({ weather }: WeatherCardProps) {
 
       <div className="grid grid-cols-2 gap-6">
         <div className="space-y-3">
-          <div className="flex items-center gap-2 text-white/80">
+          <div className="flex items-center gap-2 text-foreground">
             <Thermometer className="h-4 w-4" />
             <span className="text-sm">High: {Math.round(weather.current.tempMax)}°C</span>
           </div>
-          <div className="flex items-center gap-2 text-white/80">
+          <div className="flex items-center gap-2 text-foreground">
             <Thermometer className="h-4 w-4" />
             <span className="text-sm">Low: {Math.round(weather.current.tempMin)}°C</span>
           </div>
         </div>
         
         <div className="space-y-3">
-          <div className="flex items-center gap-2 text-white/80">
+          <div className="flex items-center gap-2 text-foreground">
             <Sun className="h-4 w-4" />
             <span className="text-sm">Sunrise: {formatTime(weather.current.sunrise)}</span>
           </div>
-          <div className="flex items-center gap-2 text-white/80">
+          <div className="flex items-center gap-2 text-foreground">
             <Sun className="h-4 w-4" />
             <span className="text-sm">Sunset: {formatTime(weather.current.sunset)}</span>
           </div>
@@ -84,12 +84,12 @@ export function WeatherCard({ weather }: WeatherCardProps) {
       </div>
       
       {weather.current.uvIndex && (
-        <div className="mt-6 p-4 bg-white/10 rounded-lg">
+        <div className="mt-6 p-4 bg-muted/20 rounded-lg">
           <div className="flex items-center justify-between">
-            <span className="text-white/80">UV Index</span>
-            <span className="text-white font-semibold">{weather.current.uvIndex}</span>
+            <span className="text-foreground">UV Index</span>
+            <span className="text-foreground font-semibold">{weather.current.uvIndex}</span>
           </div>
-          <div className="text-xs text-white/60 mt-1">
+          <div className="text-xs text-muted-foreground mt-1">
             {weather.current.uvIndex <= 2 ? 'Low' : 
              weather.current.uvIndex <= 5 ? 'Moderate' : 
              weather.current.uvIndex <= 7 ? 'High' : 'Very High'}

@@ -52,7 +52,7 @@ export function ForecastCard({ forecast }: ForecastCardProps) {
   return (
     <Card className="glass-card p-4 shadow-card transition-all duration-300 hover:shadow-weather hover:scale-105">
       <div className="text-center space-y-3">
-        <div className="text-sm text-white/80 font-medium">
+        <div className="text-sm text-foreground font-medium">
           {formatDate(forecast.date)}
         </div>
         
@@ -61,19 +61,19 @@ export function ForecastCard({ forecast }: ForecastCardProps) {
         </div>
         
         <div className="space-y-1">
-          <div className="text-lg font-semibold text-white">
+          <div className="text-lg font-semibold text-foreground">
             {Math.round(forecast.tempMax)}°
           </div>
-          <div className="text-sm text-white/60">
+          <div className="text-sm text-muted-foreground">
             {Math.round(forecast.tempMin)}°
           </div>
         </div>
         
-        <div className="text-xs text-white/60 capitalize">
+        <div className="text-xs text-muted-foreground capitalize">
           {forecast.description}
         </div>
         
-        <div className="text-xs text-white/50">
+        <div className="text-xs text-muted-foreground">
           {forecast.humidity}% humidity
         </div>
       </div>
